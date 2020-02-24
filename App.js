@@ -13,7 +13,7 @@ export default function App() {
       'Remove Task',
       `${text}`,
       [
-        {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+        // {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
         {
           text: 'Cancel',
           onPress: () => console.log('Cancel Pressed'),
@@ -47,6 +47,7 @@ export default function App() {
               renderItem={({ item }) => (
                   <TodoItem item={item} pressHandler={pressHandler}></TodoItem>
               )}
+              keyExtractor={item => item.key.toString()}
             >
             </FlatList>
           </View>
@@ -63,9 +64,9 @@ const styles = StyleSheet.create({
   },
   content: {
     marginTop: 20,
-    marginHorizontal: 40,
+    marginHorizontal: 20,
     flex: 1,
-    paddingBottom: 40
+    paddingBottom: 20
   },
   list: {
     flex: 1
